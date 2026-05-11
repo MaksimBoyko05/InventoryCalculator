@@ -1,0 +1,68 @@
+.craftswrapper {
+    background: #252535;
+    border: 1px solid rgba(156, 163, 175, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    gap: 20px;
+    height: 90vh;
+}
+
+.cardscontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.itemcard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #252535;
+    width: 420px;
+    height: fit-content;
+    padding: 5px;
+    gap: 5px;
+    border-radius: 12px;
+    color: white;
+    border: 1px solid rgba(156, 163, 175, 0.3);
+}
+.recipetitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.requirements{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.enoughreq{
+    color: #19ef09;
+}
+.notenoughreq{
+    color: #f10e0e;
+}
+
+.craftbt{
+    display: block;
+    width: 95%;
+    background: #0BFC78;
+    font-size: 0.95rem;
+    font-weight: 400;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    &:disabled{
+        background: #2B303A;
+        color: #9CA3AF;
+        cursor: not-allowed;
+    }
+}

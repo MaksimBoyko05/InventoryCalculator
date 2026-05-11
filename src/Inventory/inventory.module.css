@@ -1,0 +1,88 @@
+.inventorywrapper {
+    display: flex;
+    flex-direction: column;
+    background: #252535;
+    margin: 10px;
+    border: 1px solid rgba(156, 163, 175, 0.3);
+    padding: 10px;
+    border-radius: 12px;
+    gap: 20px;
+    height: 90vh;
+    h4{
+        color: #F3F4F6;
+    }
+}
+
+.cardscontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.itemcard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #242438;
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    gap: 15px;
+    border-radius: 12px;
+    color: #F3F4F6;
+    border: 1px solid rgba(156, 163, 175, 0.3);
+    transition: all 0.3s ease;
+    &:hover{
+        transform: translateY(-2px);
+    }
+}
+.itemtitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.itemquantity{
+    font-size: 2rem;
+    color: #3CD8DD;
+}
+.btncontainer{
+    display: flex;
+    gap: 5px;
+    & button:nth-child(1){
+        background: #4A515B;
+        color: #9CA3AF;
+        &:hover{
+            color: #F3F4F6;
+            box-shadow:
+                    0 0 5px #768383,
+                    inset 0 0 5px #768383,
+                    0 0 20px #768383,
+                    inset 0 0 20px #768383;
+        }
+        &:disabled{
+            background: #2e303a;
+            cursor: not-allowed;
+        }
+    }
+    & button:nth-child(2){
+        background: #00FBFE;
+        &:hover{
+            box-shadow:
+                    0 0 5px #00FBFE,
+                    inset 0 0 5px #00FBFE,
+                    0 0 20px #00FBFE,
+                    inset 0 0 20px #00FBFE;
+        }
+    }
+    button{
+        width: 70px;
+        font-size: 1.3rem;
+        padding: 5px;
+        border-radius: 12px;
+        border: none;
+    }
+}
