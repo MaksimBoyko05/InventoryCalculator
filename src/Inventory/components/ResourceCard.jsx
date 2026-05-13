@@ -1,6 +1,6 @@
 import styles from "../inventory.module.css"
 
-export default function ResourceCard({resources}) {
+export default function ResourceCard({resources, addQuantity, removeQuantity}) {
   return (
     <>
       <div className={styles.cardscontainer}>
@@ -9,13 +9,15 @@ export default function ResourceCard({resources}) {
             className={styles.itemcard}
             key={resource.id}>
             <div className={styles.itemtitle}>
-              <span>{resource.icon}</span>
-              <p>{resource.name}</p>
+              <span>{resource.icon} {resource.name}</span>
             </div>
             <p className={styles.itemquantity}>{resource.quantity}</p>
             <div className={styles.btncontainer}>
-              <button disabled={resource.quantity < 1}>-</button>
-              <button>+</button>
+              <button
+                onClick={() => removeQuantity(resource.id)}
+                disabled={resource.quantity < 1}>-
+              </button>
+              <button onClick={() => addQuantity(resource.id)}>+</button>
             </div>
           </div>
         ))}

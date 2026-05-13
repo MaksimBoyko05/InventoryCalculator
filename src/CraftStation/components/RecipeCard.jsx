@@ -1,6 +1,6 @@
 import styles from "../craftStation.module.css"
 
-export default function RecipeCard({recipes, currentResources}) {
+export default function RecipeCard({recipes, currentResources, handleCraft}) {
   return (
     <>
       <div className={styles.cardscontainer}>
@@ -32,7 +32,9 @@ export default function RecipeCard({recipes, currentResources}) {
               </div>
               <button
                 className={styles.craftbt}
-                disabled={!canCraft}>
+                disabled={!canCraft}
+              onClick={()=> handleCraft(recipe)}
+              >
                 {canCraft ? "Скрафтити" : "Недостатньо ресурсів"}
               </button>
             </div>

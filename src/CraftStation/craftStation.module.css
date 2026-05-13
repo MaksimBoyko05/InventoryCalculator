@@ -8,7 +8,13 @@
     padding: 10px;
     border-radius: 12px;
     gap: 20px;
+    width: 500px;
     height: 90vh;
+
+    h4 {
+        font-size: 2rem;
+        color: #F3F4F6;
+    }
 }
 
 .cardscontainer {
@@ -30,27 +36,39 @@
     border-radius: 12px;
     color: white;
     border: 1px solid rgba(156, 163, 175, 0.3);
+    transition: background-color 0.5s ease;
+    &:hover{
+        background: #313146;
+    }
 }
-.recipetitle{
+
+.recipetitle {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 1.2rem;
 }
-.requirements{
+
+.requirements {
     display: flex;
     align-items: center;
     text-align: center;
 }
-.enoughreq{
+
+.enoughreq {
     color: #19ef09;
-}
-.notenoughreq{
-    color: #f10e0e;
+    margin-top: 3px;
+    margin-left: 5px;
 }
 
-.craftbt{
+.notenoughreq {
+    color: #f10e0e;
+    margin-top: 3px;
+    margin-left: 5px;
+}
+
+.craftbt {
     display: block;
     width: 95%;
     background: #0BFC78;
@@ -60,7 +78,8 @@
     margin-bottom: 10px;
     border-radius: 10px;
     border: none;
-    &:disabled{
+
+    &:disabled {
         background: #2B303A;
         color: #9CA3AF;
         cursor: not-allowed;

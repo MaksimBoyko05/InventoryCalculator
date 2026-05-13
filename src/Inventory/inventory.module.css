@@ -7,8 +7,10 @@
     padding: 10px;
     border-radius: 12px;
     gap: 20px;
+    width: 71.5vw;
     height: 90vh;
     h4{
+        font-size: 2rem;
         color: #F3F4F6;
     }
 }
@@ -44,6 +46,7 @@
     align-items: center;
     text-align: center;
     font-size: 1.2rem;
+    padding: 2px;
 }
 .itemquantity{
     font-size: 2rem;
