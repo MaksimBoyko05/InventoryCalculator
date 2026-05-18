@@ -1,6 +1,7 @@
 import styles from "../inventory.module.css"
+import { Trash2 } from 'lucide-react';
 
-export default function ResourceCard({resources, addQuantity, removeQuantity}) {
+export default function ResourceCard({resources, addQuantity, removeQuantity, handleDeleteResource}) {
   return (
     <>
       <div className={styles.cardscontainer}>
@@ -18,6 +19,9 @@ export default function ResourceCard({resources, addQuantity, removeQuantity}) {
                 disabled={resource.quantity < 1}>-
               </button>
               <button onClick={() => addQuantity(resource.id)}>+</button>
+            </div>
+            <div className={styles.deletebtn} onClick={()=> handleDeleteResource(resource.id)}>
+              <Trash2 size={16}/>
             </div>
           </div>
         ))}

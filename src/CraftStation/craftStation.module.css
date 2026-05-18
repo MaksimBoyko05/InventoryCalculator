@@ -1,5 +1,5 @@
 .craftswrapper {
-    background: #252535;
+    background: #0f0f12;
     border: 1px solid rgba(156, 163, 175, 0.3);
     display: flex;
     flex-direction: column;
@@ -10,10 +10,31 @@
     gap: 20px;
     width: 500px;
     height: 90vh;
+    overflow: auto;
 
     h4 {
+        display: block;
+        margin-right: auto;
         font-size: 2rem;
         color: #F3F4F6;
+    }
+}
+
+.stationhead {
+    display: flex;
+
+    button {
+        background: #4ade80;
+        width: 150px;
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+        margin-left: 50px;
+        transition: all 0.5s ease;
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 }
 
@@ -25,20 +46,19 @@
 
 .itemcard {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    background: #252535;
+    background: #141416;
     width: 420px;
     height: fit-content;
-    padding: 5px;
-    gap: 5px;
+    padding: 15px;
+    gap: 10px;
     border-radius: 12px;
     color: white;
     border: 1px solid rgba(156, 163, 175, 0.3);
     transition: background-color 0.5s ease;
-    &:hover{
-        background: #313146;
+
+    &:hover {
+        background: #212126;
     }
 }
 
@@ -59,29 +79,158 @@
 .enoughreq {
     color: #19ef09;
     margin-top: 3px;
-    margin-left: 5px;
+    margin-left: auto;
+    font-weight: 600;
 }
 
 .notenoughreq {
     color: #f10e0e;
     margin-top: 3px;
-    margin-left: 5px;
+    margin-left: auto;
+    font-weight: 600;
 }
 
 .craftbt {
     display: block;
+    align-self: center;
     width: 95%;
-    background: #0BFC78;
+    background: rgba(74, 222, 128, 0.12);
+    color: #04ff59;
+    border: 0.5px solid rgba(74, 222, 128, 0.25);
     font-size: 0.95rem;
-    font-weight: 400;
+    font-weight: 500;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
-    border: none;
 
     &:disabled {
         background: #2B303A;
         color: #9CA3AF;
         cursor: not-allowed;
+        border: none;
     }
+}
+.deletebtn{
+    display: block;
+    align-self: center;
+    width: 95%;
+    background: rgba(222, 74, 74, 0.12);
+    color: #ff0404;
+    border: 0.5px solid rgba(222, 74, 74, 0.25);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.formwrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.formcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: fit-content;
+    padding: 10px;
+    background: #09090b;
+    border-radius: 12px;
+    border: 1px solid rgba(156, 163, 175, 0.13);
+    color: #F3F4F6;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    button {
+        display: block;
+        background: #4ade80;
+        width: 150px;
+        border: none;
+        padding: 7px;
+        border-radius: 10px;
+    }
+    .reqtitle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        gap: 15px;
+    }
+    .reqbagescontainer{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        .reqbage{
+            background: #1e1e22;
+            padding: 2px 7px 2px 2px;
+            width: fit-content;
+            border-radius: 8px;
+        }
+    }
+    .inputcontainer{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        input{
+            margin-top: 5px;
+            padding: 5px;
+            color: #a78bfa;
+            background: #1e1e22;
+            border-radius: 10px;
+            border: 1px solid rgba(156, 163, 175, 0.13);
+        }
+    }
+}
+.addreqsection{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    .reqfields{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        select{
+            width: fit-content;
+            height: 25px;
+            color: #a78bfa;
+            background: #1e1e22;
+            border-radius: 7px;
+            border: 1px solid rgba(156, 163, 175, 0.13);
+        }
+        input{
+            width: 40px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+            padding: 5px;
+            color: #a78bfa;
+            background: #1e1e22;
+            border-radius: 7px;
+            border: 1px solid rgba(156, 163, 175, 0.13);
+        }
+    }
+}
+
+.closebtn {
+    display: block;
+    align-self: flex-end;
+    fill: white;
+    stroke: white;
+    color: #ffffff;
 }

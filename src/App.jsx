@@ -9,6 +9,22 @@ import {inventoryReducer, initInventory, ACTIONS} from "./reducers/inventoryRedu
 
 function App() {
   const [inventory, dispatch] = useReducer(inventoryReducer, mockResources, initInventory);
+  const [recipes, setRecipes] = useState(() => {
+    const savedRecipes = localStorage.getItem("recipes")
+    if (savedRecipes) {
+      return JSON.parse(savedRecipes)
+    } else {
+      return mockRecipes
+    }
+  })
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("recipes", JSON.stringify(recipes))
+    } catch (err) {
+      console.error("Помилка збкрігання рецептів", err)
+    }
+  }, [recipes]);
 
   useEffect(() => {
     try {
@@ -25,8 +41,31 @@ function App() {
   const handleRemoveQuantity = (id) => {
     dispatch({type: ACTIONS.REMOVE_RESOURCE, payload: id});
   }
-  const handleCraft = (recipe) =>{
+  const handleCraft = (recipe) => {
     dispatch({type: ACTIONS.CRAFT_ITEM, payload: recipe})
+  }
+  const handleDeleteResource = (id) => {
+    dispatch({type: ACTIONS.DELETE_RESOURCE, payload: id})
+  }
+  const handleCreateResource = (data) => {
+    const isIdExist = inventory.some(item => item.id === data.id)
+    if (isIdExist) {
+      alert("Такий предмет вже існує")
+
+    } else {
+      dispatch({type: ACTIONS.CREATE_RESOURCE, payload: data})
+    }
+  }
+  const handleDeleteRecipe = (recipeId) => {
+    setRecipes(recipes.filter(rec => rec.id !== recipeId))
+  }
+  const handleCreateRecipe = (newRecipe) =>{
+    const isIdExist = recipes.some(recipe => recipe.id === newRecipe.id)
+    if(isIdExist){
+      alert("Такий рецепт вже існує")
+    }else{
+      setRecipes([...recipes, newRecipe])
+    }
   }
   return (
     <>
@@ -37,11 +76,16 @@ function App() {
         <Inventory
           resources={inventory}
           addQuantity={handleAddQuantity}
-          removeQuantity={handleRemoveQuantity}/>
+          removeQuantity={handleRemoveQuantity}
+          handleCreateResource={handleCreateResource}
+          handleDeleteResource={handleDeleteResource}
+        />
         <CraftStation
-          recipes={mockRecipes}
+          recipes={recipes}
           currentResources={inventory}
           handleCraft={handleCraft}
+          handleDeleteRecipe={handleDeleteRecipe}
+          handleCreateRecipe={handleCreateRecipe}
         />
       </main>
     </>

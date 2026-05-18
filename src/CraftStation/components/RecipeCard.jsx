@@ -1,6 +1,6 @@
 import styles from "../craftStation.module.css"
 
-export default function RecipeCard({recipes, currentResources, handleCraft}) {
+export default function RecipeCard({recipes, currentResources, handleCraft, handleDeleteRecipe }) {
   return (
     <>
       <div className={styles.cardscontainer}>
@@ -37,6 +37,7 @@ export default function RecipeCard({recipes, currentResources, handleCraft}) {
               >
                 {canCraft ? "Скрафтити" : "Недостатньо ресурсів"}
               </button>
+              <button className={styles.deletebtn} onClick={() => handleDeleteRecipe(recipe.id)}>Видалити</button>
             </div>
           )
         })}

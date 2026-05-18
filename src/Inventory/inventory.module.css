@@ -1,7 +1,7 @@
 .inventorywrapper {
     display: flex;
     flex-direction: column;
-    background: #252535;
+    background: #0f0f12;
     margin: 10px;
     border: 1px solid rgba(156, 163, 175, 0.3);
     padding: 10px;
@@ -14,7 +14,21 @@
         color: #F3F4F6;
     }
 }
-
+.inventoryhead{
+    display: flex;
+    button{
+        background: #4ade80;
+        width: 150px;
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+        margin-left: auto;
+        transition: all 0.5s ease;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+}
 .cardscontainer {
     display: flex;
     flex-direction: row;
@@ -27,7 +41,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #242438;
+    background: #141416;
     width: 200px;
     height: 200px;
     padding: 5px;
@@ -56,29 +70,19 @@
     display: flex;
     gap: 5px;
     & button:nth-child(1){
-        background: #4A515B;
-        color: #9CA3AF;
         &:hover{
             color: #F3F4F6;
-            box-shadow:
-                    0 0 5px #768383,
-                    inset 0 0 5px #768383,
-                    0 0 20px #768383,
-                    inset 0 0 20px #768383;
+           background: #27272e;
         }
         &:disabled{
-            background: #2e303a;
+            background: #27272e;
+            color: #9CA3AF;
             cursor: not-allowed;
         }
     }
     & button:nth-child(2){
-        background: #00FBFE;
         &:hover{
-            box-shadow:
-                    0 0 5px #00FBFE,
-                    inset 0 0 5px #00FBFE,
-                    0 0 20px #00FBFE,
-                    inset 0 0 20px #00FBFE;
+            background: #27272e;
         }
     }
     button{
@@ -86,6 +90,72 @@
         font-size: 1.3rem;
         padding: 5px;
         border-radius: 12px;
-        border: none;
+        background: #1e1e22;
+        color: #a78bfa;
+        border: 1px solid rgba(156, 163, 175, 0.13);
     }
+}
+.formwrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.formcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: fit-content;
+    padding: 10px;
+    background: #09090b;
+    border-radius: 12px;
+    border: 1px solid rgba(156, 163, 175, 0.13);
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+    button{
+        display: block;
+        background: #4ade80;
+        width: 150px;
+        border: none;
+        padding: 7px;
+        border-radius: 10px;
+    }
+}
+.inputcontainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    input{
+        margin-top: 5px;
+        padding: 5px;
+        color: #a78bfa;
+        background: #1e1e22;
+        border-radius: 10px;
+        border: 1px solid rgba(156, 163, 175, 0.13);
+    }
+}
+.deletebtn{
+svg{
+    transition: all 0.3s ease;
+    &:hover{
+        stroke: red;
+    }
+}
+}
+.closebtn{
+    display: block;
+    align-self: flex-end;
+    fill: white;
+    stroke: white;
+    color: #ffffff;
 }
