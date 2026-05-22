@@ -1,7 +1,45 @@
+:root{
+    --bg-color: #fafafa;
+    --text-color: #1e1e1e;
+    --border-color: #d1d5db;
+    --title-color: #111827;
+    --card-bg: #ffffff;
+    --card-color: #111827;
+    --quantity-color: #0891b2;
+    --btn-bg: #f3f4f6;
+    --btn-color: #7c3aed;
+    --btn-hover-bg: #e5e7eb;
+    --btn-hover-color: #111827;
+    --btn-disabled-bg: #e5e7eb;
+    --btn-disabled-color: #9ca3af;
+    --form-bg: #ffffff;
+    --input-bg: #f3f4f6;
+    --input-color: #7c3aed;
+    --close-color: #111827;
+}
+[data-theme="dark"] {
+    --bg-color: #0f0f12;
+    --text-color: #f5f5f5;
+    --border-color: #444444;
+    --title-color: #F3F4F6;
+    --card-bg: #141416;
+    --card-color: #F3F4F6;
+    --quantity-color: #3CD8DD;
+    --btn-bg: #1e1e22;
+    --btn-color: #a78bfa;
+    --btn-hover-bg: #27272e;
+    --btn-hover-color: #F3F4F6;
+    --btn-disabled-bg: #27272e;
+    --btn-disabled-color: #9CA3AF;
+    --form-bg: #09090b;
+    --input-bg: #1e1e22;
+    --input-color: #a78bfa;
+    --close-color: #ffffff;
+}
 .inventorywrapper {
     display: flex;
     flex-direction: column;
-    background: #0f0f12;
+    background-color: var(--bg-color);
     margin: 10px;
     border: 1px solid rgba(156, 163, 175, 0.3);
     padding: 10px;
@@ -11,7 +49,7 @@
     height: 90vh;
     h4{
         font-size: 2rem;
-        color: #F3F4F6;
+        color: var(--title-color);
     }
 }
 .inventoryhead{
@@ -41,13 +79,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #141416;
+    background: var(--card-bg);
     width: 200px;
     height: 200px;
     padding: 5px;
     gap: 15px;
     border-radius: 12px;
-    color: #F3F4F6;
+    color: var(--card-color);
     border: 1px solid rgba(156, 163, 175, 0.3);
     transition: all 0.3s ease;
     &:hover{
@@ -64,25 +102,25 @@
 }
 .itemquantity{
     font-size: 2rem;
-    color: #3CD8DD;
+    color: var(--quantity-color);
 }
 .btncontainer{
     display: flex;
     gap: 5px;
     & button:nth-child(1){
         &:hover{
-            color: #F3F4F6;
-           background: #27272e;
+            color: var(--btn-hover-color);
+            background: var(--btn-hover-bg);
         }
         &:disabled{
-            background: #27272e;
-            color: #9CA3AF;
+            background: var(--btn-disabled-bg);
+            color: var(--btn-disabled-color);
             cursor: not-allowed;
         }
     }
     & button:nth-child(2){
         &:hover{
-            background: #27272e;
+            background: var(--btn-hover-bg);
         }
     }
     button{
@@ -90,8 +128,8 @@
         font-size: 1.3rem;
         padding: 5px;
         border-radius: 12px;
-        background: #1e1e22;
-        color: #a78bfa;
+        background: var(--btn-bg);
+        color: var(--btn-color);
         border: 1px solid rgba(156, 163, 175, 0.13);
     }
 }
@@ -112,7 +150,7 @@
     width: 350px;
     height: fit-content;
     padding: 10px;
-    background: #09090b;
+    background: var(--form-bg);
     border-radius: 12px;
     border: 1px solid rgba(156, 163, 175, 0.13);
     form {
@@ -138,24 +176,24 @@
     input{
         margin-top: 5px;
         padding: 5px;
-        color: #a78bfa;
-        background: #1e1e22;
+        color: var(--input-color);
+        background: var(--input-bg);
         border-radius: 10px;
         border: 1px solid rgba(156, 163, 175, 0.13);
     }
 }
 .deletebtn{
-svg{
-    transition: all 0.3s ease;
-    &:hover{
-        stroke: red;
+    svg{
+        transition: all 0.3s ease;
+        &:hover{
+            stroke: red;
+        }
     }
-}
 }
 .closebtn{
     display: block;
     align-self: flex-end;
-    fill: white;
-    stroke: white;
-    color: #ffffff;
+    fill: var(--close-color);
+    stroke: var(--close-color);
+    color: var(--close-color);
 }

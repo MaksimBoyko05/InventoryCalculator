@@ -5,6 +5,7 @@ import './App.css'
 import Inventory from "./Inventory/Inventory.jsx";
 import CraftStation from "./CraftStation/CraftStation.jsx";
 import {inventoryReducer, initInventory, ACTIONS} from "./reducers/inventoryReducer.js";
+import {ThemeProvider} from "./context/ThemeContext.jsx";
 
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
   }
   return (
     <>
+      <ThemeProvider>
       <header>
         <Header/>
       </header>
@@ -88,6 +90,7 @@ function App() {
           handleCreateRecipe={handleCreateRecipe}
         />
       </main>
+      </ThemeProvider>
     </>
   )
 }

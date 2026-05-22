@@ -14,10 +14,24 @@ export default function AddRecipeForm({inventory, handleCreateRecipe, onClose}) 
   }
   const handleAddReq = (selectedResourceId, reqQuantity) => {
     if (!selectedResourceId) return;
-    setRecipeData({
-      ...recipeData,
-      requirements: [...recipeData.requirements, {resourceId: selectedResourceId, requiredQty: Number(reqQuantity)}]
-    })
+    const isReqExist = recipeData.requirements.some(item => item.resourceId === selectedResourceId)
+    if(isReqExist){
+      setRecipeData({
+        ...recipeData,
+        requirements: recipeData.requirements.map(item =>{
+          if(item.resourceId === selectedResourceId){
+            return {...item, requiredQty: Number(item.requiredQty) + Number(reqQuantity)}
+          }else{
+            return item;
+          }
+        })
+      })
+    }else{
+      setRecipeData({
+        ...recipeData,
+        requirements: [...recipeData.requirements, {resourceId: selectedResourceId, requiredQty: Number(reqQuantity)}]
+      })
+    }
     setSelectedResourceId("")
     setReqQuantity(1)
   }
